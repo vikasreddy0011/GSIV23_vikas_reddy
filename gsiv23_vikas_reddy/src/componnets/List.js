@@ -35,7 +35,7 @@ const List = () => {
 
   useEffect(() => {
     fetchMovies();
-  }, );
+  }, []);
 
   const handleSearch = () => {
     searchMovieWithName(searchQuery);
@@ -59,6 +59,7 @@ const List = () => {
     if(filteredMovies !== null && filteredMovies.length !== 0 ) {
         setMovies(filteredMovies);
     }else{
+      return (<><p>Nothing found</p></>)
         // If the movie is not present in the movies varaible then we have to fetch the data again from the API
         // and perform filtering. But keeping performance and volume, that is not the best way.
         // Observed that no Search API found on the given API documentation.

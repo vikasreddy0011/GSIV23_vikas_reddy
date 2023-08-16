@@ -4,7 +4,6 @@ import Card from './Card';
 import { getMovies } from '../API/api'; // Replace with your API function
 import {  useDispatch } from 'react-redux';
 import { fetchDataStart, fetchDataSuccess, fetchDataFailure } from '../API/apiSlice';
-import {getMovieByName } from './util';
 
 
 const List = () => {

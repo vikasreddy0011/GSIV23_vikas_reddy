@@ -4,7 +4,7 @@ import Card from './Card';
 import { getMovies } from '../API/api'; // Replace with your API function
 import {  useDispatch } from 'react-redux';
 import { fetchDataStart, fetchDataSuccess, fetchDataFailure } from '../API/apiSlice';
-
+import {getMovieByName } from './util';
 
 
 const List = () => {
@@ -12,6 +12,7 @@ const List = () => {
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
+  const [notFound,setNotFound] = useState(false);
   const dispatch = useDispatch();
 
 
@@ -44,30 +45,37 @@ const List = () => {
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);
+    handleSearch();
+    console.log(event.target.value);
   };
 
   const searchMovieWithName = (name)=>{
     //if search text is empty then show all the movie list
     if(name === null || name === "" || name === undefined){
-        setMovies(null)
         fetchMovies();
+        setNotFound(false);
         return ;
     }
-    const filteredMovies = movies.filter(movie =>
+    var filteredMovies = movies.filter(movie =>
         movie.title.toLowerCase().includes(name.toLowerCase())
       );
     
     if(filteredMovies !== null && filteredMovies.length !== 0 ) {
+       setNotFound(false);
         setMovies(filteredMovies);
     }else{
-      return (<><p>Nothing found</p></>)
+        setNotFound(true);
+        //filteredMovies = fetchFromApi(name,page);
         // If the movie is not present in the movies varaible then we have to fetch the data again from the API
         // and perform filtering. But keeping performance and volume, that is not the best way.
         // Observed that no Search API found on the given API documentation.
     }
   }
+
+
   return (
  <>
+   
      <div className="search-bar-container">
       <input
         type="text"
@@ -80,6 +88,7 @@ const List = () => {
         Search
       </button>
       </div>
+      {notFound?<p>No movies found</p>:<>
     <InfiniteScroll
       dataLength={movies?.length}
       next={!searchQuery?fetchMovies:null}
@@ -94,7 +103,8 @@ const List = () => {
             </div>
         </div>
     </div>
-    </InfiniteScroll>
+    </InfiniteScroll></>
+}
     </>
   );
 };

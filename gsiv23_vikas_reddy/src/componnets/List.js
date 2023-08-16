@@ -47,7 +47,7 @@ const List = () => {
 
   const searchMovieWithName = (name)=>{
     //if search text is empty then show all the movie list
-    if(name == null || name == "" || name == undefined){
+    if(name === null || name === "" || name == undefined){
         setMovies(null)
         fetchMovies();
         return ;
@@ -56,7 +56,7 @@ const List = () => {
         movie.title.toLowerCase().includes(name.toLowerCase())
       );
     
-    if(filteredMovies != null && filteredMovies.length !=0 ) {
+    if(filteredMovies !== null && filteredMovies.length !== 0 ) {
         setMovies(filteredMovies);
     }else{
         // If the movie is not present in the movies varaible then we have to fetch the data again from the API

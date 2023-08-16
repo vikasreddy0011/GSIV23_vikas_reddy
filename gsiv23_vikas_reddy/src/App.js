@@ -1,25 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
+import MovieDetails from './componnets/MovieDetails';
+import List from './componnets/List';
+import store from './store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Provider store={store}>
+     <Routes>
+        <Route exact path="/" element={<List/>} />
+        <Route exact path="/movie/:id" element={<MovieDetails/>} />
+    </Routes>
+    </Provider>
+    </>
   );
 }
 
-export default App;
+ export default App;

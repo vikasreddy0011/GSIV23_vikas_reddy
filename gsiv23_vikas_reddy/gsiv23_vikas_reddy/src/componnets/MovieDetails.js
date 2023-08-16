@@ -20,7 +20,7 @@ const MovieDetails = () => {
                     <div className='Home'>
                        <Link to="/" ><FontAwesomeIcon icon={faHome} /></Link>
                     </div>
-                <img src={imageURL} className="movie-image" alt ="" />
+                <img src={imageURL} className="movie-image" />
                 <h2>{movie.title}</h2>
                 <RatingStar rating={movie.vote_average}/>
                 <br/>

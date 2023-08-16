@@ -1,0 +1,253 @@
+.card{
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 240px;
+    height:55vh;
+    padding: 10px 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left:6px;
+    padding-left: 20px;     
+  }
+
+.box{
+  height:100vh;          
+
+}
+  .card:hover {
+    box-shadow: 16px 16px 20px 16px rgba(0,0,0,0.2);
+  }
+
+  .container-inner {
+    float:left;
+    
+  }
+
+  .container {
+    padding: 1px 1px;
+    padding-left: 2%;
+   
+  }
+
+  .photo{
+    max-width: calc(100% - 30px); /* Adjust padding as needed */
+    max-height: calc(100% - 100px); /* Adjust padding as needed */
+    padding-left: 10px;
+  }
+
+
+  .h5{
+    width: 100%;
+  }
+
+  .container-bottom{
+    
+  }
+
+
+  .container-bottom-releasedate{
+    float:right;
+    padding-top:0px;
+    padding-right:30px;
+  }
+
+  .container-bottom-rating{
+    float: left;
+  }
+
+  .btn-primary {
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    border-radius: var(--border-radius);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: inset 0 0 0 20rem var(--darken-1);
+  }
+  
+  .btn-primary:active {
+    box-shadow: inset 0 0 0 20rem var(--darken-2),
+      inset 0 3px 4px 0 var(--darken-3),
+      0 0 1px var(--darken-2);
+  }
+  
+  .btn-primary:disabled,
+  .btn-primary.is-disabled {
+    opacity: .5;
+  }
+  .cart{
+    float:right;
+    width:20%;
+    height:100vh;
+    background-color:rgb(55, 163, 252);
+  }
+  .yourcart{
+    float:left;
+    padding-top:10%;
+    padding-left:5%;
+    color: white;
+  }
+  .mycart{
+    background-color:rgb(10, 65, 245);
+    color: white;
+  }
+
+  .items{
+    float:right;
+    padding-top:10%;
+    color: white;
+  }
+
+
+  .rating-star {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #ffd700; /* Gold color for the stars */
+    overflow: hidden;
+    float:left;
+  }
+  
+  .rating-star-inner {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .image {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* Ensure the image doesn't exceed the container */
+  max-height: 100%;
+  }
+
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    flex: 1;
+    max-width: 400px;
+    margin-right: 20px; 
+    margin-left:20px;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+
+/* 
+
+  .movie-image{
+
+   height: 280px; 
+    max-width: 100%;
+
+    border-radius: 8px;
+  }
+
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+
+  .movie-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s;
+  } */
+
+
+  .movie-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.01);
+  }
+  
+  .movie-image {
+    width: 200px; /* Set your desired width */
+    height: 280px; /* Set your desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    border-radius: 8px;
+  }
+  
+  .movie-name {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .movie-rating {
+    margin-left: 0px;
+    margin-top: 4px;
+    font-size: 1rem;
+    color: #777;
+  }
+  .star-rating {
+    display: inline-block;
+    padding: 2px;
+    margin: 5px;
+    float:left;
+    color: #f5c518; /* Yellow color for stars */
+    font-size: 0.8rem; /* Adjust as needed */
+
+  }
+  
+  .star-icon {
+    margin-right: 4px; /* Spacing between stars */
+  }
+  
+  .star-icon.empty {
+    color: #ccc; /* Color for empty stars */
+  }
+
+  .movie-year{
+    display: inline-block;
+    border: 1px solid #ccc;
+    
+    margin: 5px;
+    float:right;
+  }
+
+  .hyperlink {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .hyperlink:hover {
+    color: darkblue;
+  }
+
+  .Home{
+    float:right;
+    padding-right: 30px;
+  }

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Card from './Card';
 import { getMovies } from '../API/api'; // Replace with your API function
-import {  useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Route, Link ,Routes} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchDataStart, fetchDataSuccess, fetchDataFailure } from '../API/apiSlice';
 
 
@@ -35,7 +36,7 @@ const List = () => {
 
   useEffect(() => {
     fetchMovies();
-  }, );
+  }, []);
 
   const handleSearch = () => {
     searchMovieWithName(searchQuery);

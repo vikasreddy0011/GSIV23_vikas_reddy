@@ -18,7 +18,7 @@ const Card = ({ movie }) => {
             <div className="movie-card" >
                 <img src={imageURL} className="movie-image" alt=""/>
                 <div className="container-inner">
-                    <a href="" onClick={e=>{handleButtonClick()}} className="hyperlink"> <h5   ><b >{movie.title}</b></h5></a>
+                    <p onClick={e=>{handleButtonClick()}} className="hyperlink"> <h5   ><b >{movie.title}</b></h5></p>
                     <RatingStar rating={movie.vote_average/2} year={movie.release_date.split('-')[0]} className="movie-rating"/>
                     <p className="movie-year"><b>{movie?.release_date.split('-')[0]}</b></p>
                 </div>

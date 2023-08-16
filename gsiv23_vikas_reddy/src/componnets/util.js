@@ -5,7 +5,7 @@ var totalPages = 1;
 
 const getMovieByName = async (name,page)=>{
     const newMovies = await getMovies(page);  
-    if(newMovies === null || newMovies.length == 0 || page >= totalPages){
+    if(newMovies === null || newMovies.length === 0 || page >== totalPages){
         return null;
     }
     const movies = newMovies.results;

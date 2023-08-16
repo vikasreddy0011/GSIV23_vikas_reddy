@@ -47,7 +47,7 @@ const List = () => {
 
   const searchMovieWithName = (name)=>{
     //if search text is empty then show all the movie list
-    if(name === null || name === "" || name == undefined){
+    if(name === null || name === "" || name === undefined){
         setMovies(null)
         fetchMovies();
         return ;
